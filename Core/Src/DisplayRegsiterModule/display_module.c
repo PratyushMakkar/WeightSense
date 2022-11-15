@@ -25,6 +25,6 @@ void sendSPIData(uint8_t data[], uint16_t byteSize) {
 
 }
 
-void DisplayInteger(uint8_t display);
+void DisplayInteger(uint16_t display);
 void _ConvertIntToChar(uint8_t display);
 void _pushCharToRegister(char rep);

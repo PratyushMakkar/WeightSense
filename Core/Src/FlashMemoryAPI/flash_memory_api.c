@@ -23,3 +23,5 @@ uint32_t Flash_Write_Data(uint32_t memory_address, uint8_t elements, uint32_t* d
 	HAL_FLASH_Lock();
 	return 0;
 }
+
+void Flash_Erase_Segment(uint8_t segment);
