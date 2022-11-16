@@ -21,8 +21,13 @@ uint32_t UpdateNumberOntoDisplay() {
 
 //Uses the HAL ADC to create a digital filter that reads the value each 5 ms
 //and checks at which point the reistor is within 10% range of final.
-uint32_t DigitalFilterForResistor() {
-	return UINT32_MAX;
+uint32_t DigitalFilterForResistor(ADC_HandleTypeDef* hadc1, uint32_t* ADCArray ) {
+	uint32_t tickstart = HAL_GetTick();
+
+	UpdateADCValuesIntoFilter(&hadc1, ADCArray);
+
+	uint32_t tickend = HAL_GetTick();
+	return (tickend-tickstart);
 }
 
 uint8_t PersistDataInFlash() {

@@ -9,6 +9,7 @@ uint32_t Flash_Read_Data(uint32_t memory_ptr, uint8_t data_count, uint32_t* arra
 		memory_ptr +=4;
 		array_ptr++;
 	}
+	return UINT32_MAX;
 }
 
 uint32_t Flash_Write_Data(uint32_t memory_address, uint8_t elements, uint32_t* data_ptr) {

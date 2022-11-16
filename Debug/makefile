@@ -11,9 +11,10 @@ RM := rm -rf
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
--include Core/Src/FlashMemoryAPI/subdir.mk
--include Core/Src/DisplayRegsiterModule/subdir.mk
 -include Core/Src/subdir.mk
+-include Core/Inc/TestSuite/subdir.mk
+-include Core/Inc/FlashMemoryAPI/subdir.mk
+-include Core/Inc/DisplayRegsiterModule/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
