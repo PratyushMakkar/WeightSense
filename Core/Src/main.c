@@ -102,10 +102,8 @@ int main(void)
   uint32_t ADCArray = {0};
   while (1)
   {
-	  DigitalFilterForResistor(&hadc1, ADCArray);
-	  HAL_Delay(100);
-	  HAL_Delay(100);
-
+	  DisplayInteger(420, &hspi1);
+	  //DigitalFilterForResistor(&hadc1, ADCArray);
   }
   /* USER CODE END 3 */
 }

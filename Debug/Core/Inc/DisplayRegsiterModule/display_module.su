@@ -1,3 +1,6 @@
-../Core/Inc/DisplayRegsiterModule/display_module.c:11:10:GetADCValue	16	static
-../Core/Inc/DisplayRegsiterModule/display_module.c:25:6:UpdateADCValuesIntoFilter	24	static
-../Core/Inc/DisplayRegsiterModule/display_module.c:41:6:sendSPIData	16	static
+../Core/Inc/DisplayRegsiterModule/display_module.c:13:10:GetADCValue	16	static
+../Core/Inc/DisplayRegsiterModule/display_module.c:27:6:UpdateADCValuesIntoFilter	24	static
+../Core/Inc/DisplayRegsiterModule/display_module.c:43:6:sendSPIData	24	static
+../Core/Inc/DisplayRegsiterModule/display_module.c:61:6:DisplayInteger	24	static
+../Core/Inc/DisplayRegsiterModule/display_module.c:76:9:DigitToMacro	16	static
+../Core/Inc/DisplayRegsiterModule/display_module.c:110:6:_ConvertIntToChar	32	static
