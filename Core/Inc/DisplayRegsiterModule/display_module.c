@@ -68,10 +68,26 @@ void DisplayInteger(uint16_t display, SPI_HandleTypeDef* hspi1 ) {
 			digitArray[0] = digit;
 		}
 		sendSPIData(&digitArray[i], 1, hspi1);
-		HAL_Delay(1500);
+		HAL_Delay(500);
 	}
 
 }
+
+void DisplayIntegerWithDelay(uint16_t display, SPI_HandleTypeDef* hspi1, uint32_t delay) {
+	uint8_t digitArray[3] = {};
+	_ConvertIntToChar(display, digitArray);
+	for (uint8_t i =0; i<3; ++i) {
+		if (i ==0) {
+			uint8_t digit = digitArray[0];
+			digit |= (0b1<<7);
+			digitArray[0] = digit;
+		}
+		sendSPIData(&digitArray[i], 1, hspi1);
+		HAL_Delay(delay);
+	}
+
+}
+
 
 uint8_t DigitToMacro(uint16_t digit) {
 	if (digit==0) {

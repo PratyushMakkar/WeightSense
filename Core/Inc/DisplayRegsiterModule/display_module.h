@@ -27,5 +27,6 @@ void UpdateADCValuesIntoFilter(ADC_HandleTypeDef* hadc1, uint16_t* ADCArray);
 uint8_t DigitToMacro(uint16_t digit);
 void sendSPIData(uint8_t data[], uint16_t byteSize, SPI_HandleTypeDef* hspi1);
 void DisplayInteger(uint16_t display, SPI_HandleTypeDef* hspi1 );
+void DisplayIntegerWithDelay(uint16_t display, SPI_HandleTypeDef* hspi1, uint32_t delay);
 void _ConvertIntToChar(uint16_t display, uint8_t* digitArray);
 void _pushCharToRegister(char rep);

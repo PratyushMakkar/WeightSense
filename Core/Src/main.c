@@ -102,7 +102,8 @@ int main(void)
   uint32_t ADCArray = {0};
   while (1)
   {
-	  DisplayInteger(420, &hspi1);
+	  uint32_t tick_val = UpdateNumberOntoDisplayTest(&hspi1);
+	  break;
 	  //DigitalFilterForResistor(&hadc1, ADCArray);
   }
   /* USER CODE END 3 */

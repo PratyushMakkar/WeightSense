@@ -8,11 +8,12 @@
 #include <stdint.h>
 #include <main.h>
 
-uint32_t UpdateNumberOntoDisplay() {
+
+uint32_t UpdateNumberOntoDisplayTest( SPI_HandleTypeDef* hspi1_ptr) {
 	uint32_t tickstart = HAL_GetTick();
 
-	for (uint16_t index = 1; index<1000; ++index) {
-		//DisplayInteger(index);
+	for (uint16_t index = 1; index< TEST_VAL_COUNT; ++index) {
+		DisplayIntegerWithDelay(index, hspi1_ptr, 100);
 	}
 
 	uint32_t tickend = HAL_GetTick();
