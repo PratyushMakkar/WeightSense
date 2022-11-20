@@ -17,6 +17,6 @@
 
 #endif /* SRC_TESTSUITE_UPDATENUMBERONTODISPLAYTEST_H_ */
 
-uint32_t UpdateNumberOntoDisplayTest();
+uint32_t UpdateNumberOntoDisplayTest(SPI_HandleTypeDef* hspi1_ptr);
 uint32_t DigitalFilterForResistor(ADC_HandleTypeDef* hadc1, uint32_t* ADCArray);
 uint8_t PersistDataInFlash();
