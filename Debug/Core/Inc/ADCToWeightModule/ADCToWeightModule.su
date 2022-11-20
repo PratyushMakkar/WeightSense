@@ -1,0 +1,2 @@
+../Core/Inc/ADCToWeightModule/ADCToWeightModule.c:10:10:ConvertADCValToMass	24	static
+../Core/Inc/ADCToWeightModule/ADCToWeightModule.c:16:7:_findLengthAlongResistor	24	static
