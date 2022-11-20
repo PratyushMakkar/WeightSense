@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include <stdint.h>
+#include "ADCToWeightModule/ADCToWeightModule.h"
 #include "FlashMemoryAPI/flash_memory_api.h"
 #include "FlashMemoryAPI/FlashWeightSenseTypeDef.h"
 #include "TestSuite/Test_Suite.h"
@@ -102,15 +103,17 @@ int main(void)
   /* Infinite loop */
 
   /* USER CODE BEGIN WHILE */
-  PersistDataInFlash();
+
 
   while (1)
   {
 
+	uint32_t mass = 0;
 	HAL_ADC_Start(&hadc1);
 	HAL_ADC_PollForConversion(&hadc1, 1000);
 	uint32_t adc_val = HAL_ADC_GetValue(&hadc1);
-	DisplayInteger(adc_val, &hspi1);
+	mass = ConvertADCValToMass(adc_val);
+	DisplayInteger(mass, &hspi1);
 	HAL_Delay(100);
 	HAL_ADC_Stop(&hadc1);
 	  //save_to_flash(&data[0], 2);

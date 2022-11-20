@@ -15,6 +15,7 @@ RM := rm -rf
 -include Core/Inc/TestSuite/subdir.mk
 -include Core/Inc/FlashMemoryAPI/subdir.mk
 -include Core/Inc/DisplayRegsiterModule/subdir.mk
+-include Core/Inc/ADCToWeightModule/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
