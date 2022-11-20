@@ -1,4 +1,5 @@
 "./Core/Inc/DisplayRegsiterModule/display_module.o"
+"./Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.o"
 "./Core/Inc/FlashMemoryAPI/flash_memory_api.o"
 "./Core/Inc/TestSuite/TestSuite.o"
 "./Core/Src/main.o"

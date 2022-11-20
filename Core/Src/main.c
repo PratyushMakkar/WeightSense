@@ -18,6 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <stdint.h>
+#include "FlashMemoryAPI/flash_memory_api.h"
+#include "FlashMemoryAPI/FlashWeightSenseTypeDef.h"
 #include "TestSuite/Test_Suite.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -66,8 +69,6 @@ static void MX_ADC1_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-
-
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -99,16 +100,28 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Infinite loop */
+
   /* USER CODE BEGIN WHILE */
+  SaveWeightSenseWithinMemory(22, 07, 450, 0);
+
+
+  FlashWeightSenseTypeDef weightSense = RetrieveObjectFromAddress(PAGE_ADDRESS);
+  uint16_t weight = weightSense.weight;
+
+  Flash_Erase_Segment(FLASH_SECTOR);
+
   while (1)
   {
+
+	HAL_ADC_Start(&hadc1);
+	HAL_ADC_PollForConversion(&hadc1, 1000);
+	uint32_t adc_val = HAL_ADC_GetValue(&hadc1);
+	DisplayInteger(adc_val, &hspi1);
+	HAL_Delay(100);
+	HAL_ADC_Stop(&hadc1);
+	  //save_to_flash(&data[0], 2);
     /* USER CODE END WHILE */
-	  HAL_ADC_Start(&hadc1);
-	  HAL_ADC_PollForConversion(&hadc1, 1000);
-	  uint32_t adc_val = HAL_ADC_GetValue(&hadc1);
-	  DisplayInteger(adc_val, &hspi1);
-	  HAL_Delay(100);
-	  HAL_ADC_Stop(&hadc1);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

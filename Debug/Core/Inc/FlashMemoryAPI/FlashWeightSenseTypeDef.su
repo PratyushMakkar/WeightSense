@@ -1,0 +1,4 @@
+../Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.c:10:10:FindTotalPlasticWaste	16	static
+../Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.c:14:25:RetrieveObjectFromAddress	64	static
+../Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.c:39:10:SaveWeightSenseWithinMemory	40	static
+../Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.c:58:10:_InsertWeightSenseIntoFlash	40	static

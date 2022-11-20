@@ -6,6 +6,7 @@
  *      Author: pmakkar
  */
 #include <stdint.h>
+#include <main.h>
 
 
 
@@ -14,6 +15,10 @@
 
 #endif /* SRC_FLASHMEMORYAPI_FLASH_MEMORY_API_H_ */
 
-uint32_t Flash_Write_Data(uint32_t memory_address, uint8_t elements, uint32_t* data_ptr);
-uint32_t Flash_Read_Data(uint32_t memory_ptr, uint8_t data_count, uint32_t* array_ptr);
-void Flash_Erase_Segment(uint8_t segment);
+#define page_size 0x800
+#define PAGE_ADDRESS 0x08005000
+#define FLASH_SECTOR FLASH_SECTOR_1
+
+uint32_t save_to_flash(uint8_t *data, uint8_t data_length, uint32_t flash_addres);
+void read_from_flash(uint32_t address, uint8_t data_length, uint8_t* buffer);
+uint8_t Flash_Erase_Segment(uint32_t data_segment);

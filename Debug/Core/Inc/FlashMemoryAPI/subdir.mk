@@ -5,12 +5,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.c \
 ../Core/Inc/FlashMemoryAPI/flash_memory_api.c 
 
 OBJS += \
+./Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.o \
 ./Core/Inc/FlashMemoryAPI/flash_memory_api.o 
 
 C_DEPS += \
+./Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.d \
 ./Core/Inc/FlashMemoryAPI/flash_memory_api.d 
 
 
@@ -21,7 +24,7 @@ Core/Inc/FlashMemoryAPI/%.o Core/Inc/FlashMemoryAPI/%.su: ../Core/Inc/FlashMemor
 clean: clean-Core-2f-Inc-2f-FlashMemoryAPI
 
 clean-Core-2f-Inc-2f-FlashMemoryAPI:
-	-$(RM) ./Core/Inc/FlashMemoryAPI/flash_memory_api.d ./Core/Inc/FlashMemoryAPI/flash_memory_api.o ./Core/Inc/FlashMemoryAPI/flash_memory_api.su
+	-$(RM) ./Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.d ./Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.o ./Core/Inc/FlashMemoryAPI/FlashWeightSenseTypeDef.su ./Core/Inc/FlashMemoryAPI/flash_memory_api.d ./Core/Inc/FlashMemoryAPI/flash_memory_api.o ./Core/Inc/FlashMemoryAPI/flash_memory_api.su
 
 .PHONY: clean-Core-2f-Inc-2f-FlashMemoryAPI
 
