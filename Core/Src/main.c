@@ -102,7 +102,6 @@ int main(void)
   /* Infinite loop */
 
   /* USER CODE BEGIN WHILE */
-  PersistDataInFlash();
 
   while (1)
   {
