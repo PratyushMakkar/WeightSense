@@ -5,7 +5,7 @@
  *      Author: pratyushmakkar
  */
 #include "DisplayRegsiterModule/display_module.h"
-#include "FlashMemoryAPI/flash_memory_api.h"
+#include "FlashMemoryAPI/FlashWeightSenseTypeDef.h"
 #include <stdbool.h>
 #include <stdint.h>
 

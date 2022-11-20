@@ -44,5 +44,17 @@ uint32_t DigitalFilterForResistor(ADC_HandleTypeDef* hadc1, uint32_t* ADCArray )
 }
 
 uint8_t PersistDataInFlash() {
-	return 0;
+
+	Flash_Erase_Segment(FLASH_SECTOR);
+
+	uint32_t address = SaveWeightSenseWithinMemory(22, 07, 450, PAGE_ADDRESS);
+	uint32_t address2 = SaveWeightSenseWithinMemory(15, 12, 115, address);
+
+	FlashWeightSenseTypeDef weightSense = RetrieveObjectFromAddress(PAGE_ADDRESS);
+	FlashWeightSenseTypeDef weightSense2 = RetrieveObjectFromAddress(address);
+
+	uint16_t weight = weightSense.weight;
+	uint16_t weight2 = weightSense2.weight;
+
+	Flash_Erase_Segment(FLASH_SECTOR);
 }

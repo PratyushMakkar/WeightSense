@@ -102,13 +102,7 @@ int main(void)
   /* Infinite loop */
 
   /* USER CODE BEGIN WHILE */
-  SaveWeightSenseWithinMemory(22, 07, 450, 0);
-
-
-  FlashWeightSenseTypeDef weightSense = RetrieveObjectFromAddress(PAGE_ADDRESS);
-  uint16_t weight = weightSense.weight;
-
-  Flash_Erase_Segment(FLASH_SECTOR);
+  PersistDataInFlash();
 
   while (1)
   {

@@ -19,25 +19,13 @@ uint32_t save_to_flash(uint8_t *data, uint8_t data_length, uint32_t flash_addres
 	  /* Allow Access to option bytes sector */
 	  HAL_FLASH_OB_Unlock();
 
-	  /* Fill EraseInit structure*/
-	  FLASH_EraseInitTypeDef EraseInitStruct;
-	  EraseInitStruct.TypeErase = FLASH_TYPEERASE_SECTORS;
-	  EraseInitStruct.VoltageRange = FLASH_VOLTAGE_RANGE_3;
-	  EraseInitStruct.Sector =FLASH_SECTOR_1;
-	  EraseInitStruct.Banks = FLASH_BANK_1;
-	  EraseInitStruct.NbSectors = 1;
-
-	  uint32_t PageError;
 
 	  volatile uint32_t CURRENT_ADD = flash_address, write_cnt=0;
 
 	  volatile HAL_STATUS_TypeDEF;
-	  volatile HAL_StatusTypeDef status;
-	  status = HAL_FLASHEx_Erase(&EraseInitStruct, &PageError);
-
+	  volatile HAL_StatusTypeDef status = HAL_OK;
 
 	  for (uint8_t i = 0; i<data_length; ++i) {
-
 		  if (status != HAL_OK) {
 		  	HAL_FLASH_OB_Lock();
 		  	HAL_FLASH_Lock();

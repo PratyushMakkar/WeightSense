@@ -50,7 +50,7 @@ uint32_t SaveWeightSenseWithinMemory(uint16_t week, uint16_t year, uint16_t weig
 	date = (week<<8) | year;
 	weightSense.date = date;
 
-	weightSense.next_ptr = 0x80005009;
+	weightSense.next_ptr = flashAddress+9;;
 	uint32_t address = _InsertWeightSenseIntoFlash(&weightSense, flashAddress);
 	return address;
 }

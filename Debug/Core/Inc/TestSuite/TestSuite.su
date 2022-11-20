@@ -1,3 +1,3 @@
 ../Core/Inc/TestSuite/TestSuite.c:12:10:UpdateNumberOntoDisplayTest	32	static
 ../Core/Inc/TestSuite/TestSuite.c:25:10:DigitalFilterForResistor	32	static
-../Core/Inc/TestSuite/TestSuite.c:46:9:PersistDataInFlash	4	static
+../Core/Inc/TestSuite/TestSuite.c:46:9:PersistDataInFlash	40	static
