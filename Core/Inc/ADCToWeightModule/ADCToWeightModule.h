@@ -1,0 +1,13 @@
+/*
+ * ADCToWeightModule.h
+ *
+ *  Created on: Nov. 20, 2022
+ *      Author: pratyushmakkar
+ */
+
+#ifndef INC_ADCTOWEIGHTMODULE_ADCTOWEIGHTMODULE_H_
+#define INC_ADCTOWEIGHTMODULE_ADCTOWEIGHTMODULE_H_
+
+
+
+#endif /* INC_ADCTOWEIGHTMODULE_ADCTOWEIGHTMODULE_H_ */
